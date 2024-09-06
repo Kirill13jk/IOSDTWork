@@ -10,13 +10,18 @@
 		A25210DA2C8B1B2900719705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210D92C8B1B2900719705 /* AppDelegate.swift */; };
 		A25210DC2C8B1B2900719705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210DB2C8B1B2900719705 /* SceneDelegate.swift */; };
 		A25210DE2C8B1B2900719705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210DD2C8B1B2900719705 /* ViewController.swift */; };
-		A25210E12C8B1B2900719705 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25210E02C8B1B2900719705 /* Base */; };
 		A25210E42C8B1B2900719705 /* IOSDTWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25210E22C8B1B2900719705 /* IOSDTWork.xcdatamodeld */; };
 		A25210E62C8B1B2B00719705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25210E52C8B1B2B00719705 /* Assets.xcassets */; };
 		A25210E92C8B1B2B00719705 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25210E82C8B1B2B00719705 /* Base */; };
 		A25210F42C8B1B2B00719705 /* IOSDTWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210F32C8B1B2B00719705 /* IOSDTWorkTests.swift */; };
 		A25210FE2C8B1B2B00719705 /* IOSDTWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210FD2C8B1B2B00719705 /* IOSDTWorkUITests.swift */; };
 		A25211002C8B1B2B00719705 /* IOSDTWorkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25210FF2C8B1B2B00719705 /* IOSDTWorkUITestsLaunchTests.swift */; };
+		A252110D2C8B1C3300719705 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252110C2C8B1C3300719705 /* ImageDetailViewController.swift */; };
+		A252110F2C8B1C4E00719705 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252110E2C8B1C4E00719705 /* FileService.swift */; };
+		A25211112C8B1C6900719705 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25211102C8B1C6900719705 /* DocumentsViewController.swift */; };
+		A25211132C8B225000719705 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25211122C8B225000719705 /* PasswordViewController.swift */; };
+		A25211152C8B226A00719705 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25211142C8B226A00719705 /* SettingsViewController.swift */; };
+		A25211182C8B22EA00719705 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A25211172C8B22EA00719705 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +46,6 @@
 		A25210D92C8B1B2900719705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A25210DB2C8B1B2900719705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A25210DD2C8B1B2900719705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A25210E02C8B1B2900719705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A25210E32C8B1B2900719705 /* IOSDTWork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOSDTWork.xcdatamodel; sourceTree = "<group>"; };
 		A25210E52C8B1B2B00719705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25210E82C8B1B2B00719705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,11 @@
 		A25210F92C8B1B2B00719705 /* IOSDTWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSDTWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25210FD2C8B1B2B00719705 /* IOSDTWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSDTWorkUITests.swift; sourceTree = "<group>"; };
 		A25210FF2C8B1B2B00719705 /* IOSDTWorkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSDTWorkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A252110C2C8B1C3300719705 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		A252110E2C8B1C4E00719705 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		A25211102C8B1C6900719705 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		A25211122C8B225000719705 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		A25211142C8B226A00719705 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25211182C8B22EA00719705 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,11 +114,15 @@
 				A25210D92C8B1B2900719705 /* AppDelegate.swift */,
 				A25210DB2C8B1B2900719705 /* SceneDelegate.swift */,
 				A25210DD2C8B1B2900719705 /* ViewController.swift */,
-				A25210DF2C8B1B2900719705 /* Main.storyboard */,
 				A25210E52C8B1B2B00719705 /* Assets.xcassets */,
 				A25210E72C8B1B2B00719705 /* LaunchScreen.storyboard */,
 				A25210EA2C8B1B2B00719705 /* Info.plist */,
 				A25210E22C8B1B2900719705 /* IOSDTWork.xcdatamodeld */,
+				A252110C2C8B1C3300719705 /* ImageDetailViewController.swift */,
+				A252110E2C8B1C4E00719705 /* FileService.swift */,
+				A25211102C8B1C6900719705 /* DocumentsViewController.swift */,
+				A25211122C8B225000719705 /* PasswordViewController.swift */,
+				A25211142C8B226A00719705 /* SettingsViewController.swift */,
 			);
 			path = IOSDTWork;
 			sourceTree = "<group>";
@@ -146,6 +160,9 @@
 			dependencies = (
 			);
 			name = IOSDTWork;
+			packageProductDependencies = (
+				A25211172C8B22EA00719705 /* KeychainSwift */,
+			);
 			productName = IOSDTWork;
 			productReference = A25210D62C8B1B2900719705 /* IOSDTWork.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +235,9 @@
 				Base,
 			);
 			mainGroup = A25210CD2C8B1B2900719705;
+			packageReferences = (
+				A25211162C8B22EA00719705 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = A25210D72C8B1B2900719705 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +256,6 @@
 			files = (
 				A25210E62C8B1B2B00719705 /* Assets.xcassets in Resources */,
 				A25210E92C8B1B2B00719705 /* Base in Resources */,
-				A25210E12C8B1B2900719705 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25210E42C8B1B2900719705 /* IOSDTWork.xcdatamodeld in Sources */,
+				A25211132C8B225000719705 /* PasswordViewController.swift in Sources */,
 				A25210DE2C8B1B2900719705 /* ViewController.swift in Sources */,
 				A25210DA2C8B1B2900719705 /* AppDelegate.swift in Sources */,
 				A25210DC2C8B1B2900719705 /* SceneDelegate.swift in Sources */,
+				A252110D2C8B1C3300719705 /* ImageDetailViewController.swift in Sources */,
+				A252110F2C8B1C4E00719705 /* FileService.swift in Sources */,
+				A25211112C8B1C6900719705 /* DocumentsViewController.swift in Sources */,
+				A25211152C8B226A00719705 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A25210DF2C8B1B2900719705 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A25210E02C8B1B2900719705 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A25210E72C8B1B2B00719705 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,7 +466,7 @@
 				INFOPLIST_FILE = IOSDTWork/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,7 +493,7 @@
 				INFOPLIST_FILE = IOSDTWork/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -605,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A25211162C8B22EA00719705 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A25211172C8B22EA00719705 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25211162C8B22EA00719705 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A25210E22C8B1B2900719705 /* IOSDTWork.xcdatamodeld */ = {
