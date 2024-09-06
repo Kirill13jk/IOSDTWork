@@ -1,121 +1,119 @@
 import UIKit
-import KeychainSwift  // Импорт библиотеки KeychainSwift
+import KeychainSwift
 
 class PasswordViewController: UIViewController {
-    // UI элементы
-    private let passwordTextField = UITextField()
-    private let actionButton = UIButton(type: .system)
     
-    // Переменные для управления состояниями
-    private var isFirstPasswordEntry = true  // Флаг для отслеживания, вводится ли пароль первый раз
-    private var firstPassword: String?  // Хранение первого ввода пароля
-    
-    // KeychainSwift для хранения пароля
+    let passwordTextField = UITextField()
+    let actionButton = UIButton(type: .system)
+    let errorLabel = UILabel()
+
     let keychain = KeychainSwift()
+    var isCreatingPassword = true
+    var firstPasswordEntry: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
+        
         setupUI()
         
-        // Проверяем, сохранён ли пароль
-        if keychain.get("password") != nil {
-            // У пользователя уже есть пароль
+        // Проверка, есть ли сохранённый пароль
+        if keychain.get("userPassword") != nil {
+            isCreatingPassword = false
             actionButton.setTitle("Введите пароль", for: .normal)
-            isFirstPasswordEntry = false
         } else {
-            // Пользователь ещё не создавал пароль
             actionButton.setTitle("Создать пароль", for: .normal)
         }
     }
     
     // Настройка UI
-    private func setupUI() {
+    func setupUI() {
         passwordTextField.placeholder = "Введите пароль"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .roundedRect
+        
+        actionButton.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
+        
+        errorLabel.textColor = .red
+        errorLabel.textAlignment = .center
+        errorLabel.numberOfLines = 0
+        
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(passwordTextField)
-        
-        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(actionButton)
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        // Устанавливаем ограничения для UI элементов
+        view.addSubview(passwordTextField)
+        view.addSubview(actionButton)
+        view.addSubview(errorLabel)
+        
+        // Установка ограничений для элементов UI
         NSLayoutConstraint.activate([
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
             passwordTextField.widthAnchor.constraint(equalToConstant: 200),
             
+            actionButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            actionButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20)
+            
+            errorLabel.topAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: 20),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
-
-    // Обработка нажатия на кнопку
-    @objc private func actionButtonTapped() {
-        guard let inputPassword = passwordTextField.text, inputPassword.count >= 4 else {
-            showError(message: "Пароль должен содержать минимум 4 символа")
+    
+    @objc func actionButtonPressed() {
+        guard let enteredPassword = passwordTextField.text, enteredPassword.count >= 4 else {
+            showError("Пароль должен содержать минимум 4 символа.")
             return
         }
         
-        // Проверяем, создаёт ли пользователь пароль впервые
-        if isFirstPasswordEntry {
-            if firstPassword == nil {
-                // Первый ввод пароля
-                firstPassword = inputPassword
+        if isCreatingPassword {
+            if firstPasswordEntry == nil {
+                firstPasswordEntry = enteredPassword
                 actionButton.setTitle("Повторите пароль", for: .normal)
                 passwordTextField.text = ""
             } else {
-                // Проверка повторного ввода пароля
-                if firstPassword == inputPassword {
-                    // Сохраняем пароль в Keychain
-                    keychain.set(inputPassword, forKey: "password")
-                    openNextScreen()  // Переход на следующий экран
+                if firstPasswordEntry == enteredPassword {
+                    // Сохранение пароля в Keychain
+                    keychain.set(enteredPassword, forKey: "userPassword")
+                    openNextScreen() // Переход на TabBar экран
                 } else {
-                    // Пароли не совпадают
-                    showError(message: "Пароли не совпадают, попробуйте снова")
-                    resetPasswordCreationState()  // Сброс состояния экрана
+                    showError("Пароли не совпадают!")
+                    resetToInitialState()
                 }
             }
         } else {
             // Проверка сохранённого пароля
-            if let storedPassword = keychain.get("password"), storedPassword == inputPassword {
-                openNextScreen()  // Переход на следующий экран
+            if let savedPassword = keychain.get("userPassword"), savedPassword == enteredPassword {
+                openNextScreen() // Переход на TabBar экран
             } else {
-                showError(message: "Неверный пароль")
+                showError("Неверный пароль!")
             }
         }
     }
     
-    // Сброс состояния создания пароля
-    private func resetPasswordCreationState() {
-        firstPassword = nil
+    // Сброс экрана к начальному состоянию
+    func resetToInitialState() {
+        firstPasswordEntry = nil
         actionButton.setTitle("Создать пароль", for: .normal)
         passwordTextField.text = ""
-        isFirstPasswordEntry = true
     }
     
-    // Переход на следующий экран (например, TabBarController)
-    private func openNextScreen() {
-        let tabBarController = UITabBarController()
-        let documentsVC = DocumentsViewController()
-        let settingsVC = SettingsViewController()
-        
-        // Настраиваем вкладки
-        documentsVC.tabBarItem = UITabBarItem(title: "Файлы", image: UIImage(systemName: "folder"), tag: 0)
-        settingsVC.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear"), tag: 1)
-        
-        tabBarController.viewControllers = [UINavigationController(rootViewController: documentsVC), UINavigationController(rootViewController: settingsVC)]
-        
-        // Переход к TabBarController
-        navigationController?.pushViewController(tabBarController, animated: true)
+    // Показать ошибку
+    func showError(_ message: String) {
+        errorLabel.text = message
     }
     
-    // Показываем ошибку пользователю
-    private func showError(message: String) {
-        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ОК", style: .default))
-        present(alert, animated: true)
+    // Переход на следующий экран с TabBar
+    func openNextScreen() {
+        let tabBarVC = MainTabBarController()
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true, completion: nil)
     }
+
 }
+
+
+
+
