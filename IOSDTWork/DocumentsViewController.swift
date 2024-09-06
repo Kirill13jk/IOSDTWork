@@ -26,9 +26,11 @@ class DocumentsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // Настройка навигационной панели.
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить фотографию", style: .plain, target: self, action: #selector(addPhotoTapped))  // Кнопка для добавления фото.
+        // Используем системное изображение "plus" из SF Symbols для кнопки
+        let addPhotoButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoTapped))
+        navigationItem.rightBarButtonItem = addPhotoButton
     }
-    
+
     // Обработчик нажатия на кнопку добавления фото.
     @objc private func addPhotoTapped() {
         let alertController = UIAlertController(title: "Enter file name", message: nil, preferredStyle: .alert)  // Показываем алерт для ввода имени файла.

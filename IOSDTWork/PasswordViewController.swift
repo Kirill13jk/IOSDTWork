@@ -107,9 +107,14 @@ class PasswordViewController: UIViewController {
     
     // Переход на следующий экран с TabBar
     func openNextScreen() {
+        // Создаем MainTabBarController
         let tabBarVC = MainTabBarController()
-        tabBarVC.modalPresentationStyle = .fullScreen
-        present(tabBarVC, animated: true, completion: nil)
+
+        // Доступ к SceneDelegate для смены корневого контроллера
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.window?.rootViewController = tabBarVC
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
     }
 
 }

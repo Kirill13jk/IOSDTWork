@@ -5,14 +5,15 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Создаём контроллеры для табов
-        let fileListVC = UINavigationController(rootViewController: FileListViewController())
-        fileListVC.tabBarItem = UITabBarItem(title: "Файлы", image: UIImage(systemName: "folder"), tag: 0)
-        
-        let settingsVC = UINavigationController(rootViewController: SettingsViewController())
-        settingsVC.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), tag: 1)
+        // Создаём контроллер для документов
+        let documentsVC = UINavigationController(rootViewController: DocumentsViewController())
+        documentsVC.tabBarItem = UITabBarItem(title: "Documents", image: UIImage(systemName: "folder"), tag: 0)
 
-        // Добавляем контроллеры в таббар
-        viewControllers = [fileListVC, settingsVC]
+        // Создаём контроллер для настроек (можно кастомизировать)
+        let settingsVC = UINavigationController(rootViewController: SettingsViewController())
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 1)
+
+        // Добавляем контроллеры в TabBar
+        viewControllers = [documentsVC, settingsVC]
     }
 }
