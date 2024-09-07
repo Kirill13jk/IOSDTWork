@@ -24,6 +24,7 @@
 		A25211182C8B22EA00719705 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A25211172C8B22EA00719705 /* KeychainSwift */; };
 		A252111A2C8B2DD000719705 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25211192C8B2DD000719705 /* FilesViewController.swift */; };
 		A252111C2C8B416200719705 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252111B2C8B416200719705 /* MainTabBarController.swift */; };
+		A2EDB2052C8C81DE0032B4A8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDB2042C8C81DE0032B4A8 /* ChangePasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A25211142C8B226A00719705 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A25211192C8B2DD000719705 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		A252111B2C8B416200719705 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A2EDB2042C8C81DE0032B4A8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				A25211142C8B226A00719705 /* SettingsViewController.swift */,
 				A25211192C8B2DD000719705 /* FilesViewController.swift */,
 				A252111B2C8B416200719705 /* MainTabBarController.swift */,
+				A2EDB2042C8C81DE0032B4A8 /* ChangePasswordViewController.swift */,
 			);
 			path = IOSDTWork;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				A252110D2C8B1C3300719705 /* ImageDetailViewController.swift in Sources */,
 				A252110F2C8B1C4E00719705 /* FileService.swift in Sources */,
 				A25211112C8B1C6900719705 /* DocumentsViewController.swift in Sources */,
+				A2EDB2052C8C81DE0032B4A8 /* ChangePasswordViewController.swift in Sources */,
 				A252111A2C8B2DD000719705 /* FilesViewController.swift in Sources */,
 				A25211152C8B226A00719705 /* SettingsViewController.swift in Sources */,
 			);
